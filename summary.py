@@ -4,8 +4,8 @@ import openai
 from docx import Document
 import os
 
-# Set your OpenAI API key
-openai.api_key = os.environ.get("OPENAI_API_KEY")  # Or replace with your API key string
+# Set OpenAI API key
+openai.api_key = os.environ.get("OPENAI_API_KEY") 
 
 def read_transcript(file_path):
     """Reads the transcript from a .txt file."""
@@ -16,7 +16,7 @@ def read_transcript(file_path):
 def summary_extraction(transcript):
     """Generates a summary of the transcript."""
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o",
         temperature=0,
         messages=[
             {
@@ -40,7 +40,7 @@ def summary_extraction(transcript):
 def key_points_extraction(transcript):
     """Extracts key points from the transcript."""
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o",
         temperature=0,
         messages=[
             {
@@ -63,7 +63,7 @@ def key_points_extraction(transcript):
 def action_items_extraction(transcript):
     """Identifies action items from the transcript."""
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o",
         temperature=0,
         messages=[
             {
@@ -86,7 +86,7 @@ def action_items_extraction(transcript):
 def sentiment_analysis(transcript):
     """Performs sentiment analysis on the transcript."""
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o",
         temperature=0,
         messages=[
             {
